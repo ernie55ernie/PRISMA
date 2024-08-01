@@ -166,3 +166,43 @@ The training curves are described below. The cost represents the average delay p
 In the figure below, we can evaluate the model performance. We can observe that the DQN-Routing agent is capable of learning a ploicy proximal to a Shortest Path algorithm. In some of the scenarios evaluated, it can performs better than the shortest path algorithm.
 
 ![My Image](images/testing_curves.png)
+
+
+# Issues
+
+Waf: The wscript in '/PRISMA/ns3-gym' is unreadable
+Traceback (most recent call last):
+  File "/PRISMA/ns3-gym/.waf3-2.0.9-897e824215d3dab2b64982d8af27db90/waflib/Scripting.py", line 101, in waf_entry_point
+    set_main_module(os.path.normpath(os.path.join(Context.run_dir,Context.WSCRIPT_FILE)))
+  File "/PRISMA/ns3-gym/.waf3-2.0.9-897e824215d3dab2b64982d8af27db90/waflib/Scripting.py", line 141, in set_main_module
+    Context.g_module=Context.load_module(file_path)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/PRISMA/ns3-gym/.waf3-2.0.9-897e824215d3dab2b64982d8af27db90/waflib/Context.py", line 349, in load_module
+    code=Utils.readf(path,m='rU',encoding=encoding)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/PRISMA/ns3-gym/.waf3-2.0.9-897e824215d3dab2b64982d8af27db90/waflib/Utils.py", line 141, in readf
+    with open(fname,m)as f:
+         ^^^^^^^^^^^^^
+ValueError: invalid mode: 'rUb'
+
+/PRISMA/ns3-gym/.waf3-2.0.9-897e824215d3dab2b64982d8af27db90/waflib/Context.py
+
+
+
+
+Traceback (most recent call last):
+  File "/PRISMA/ns3-gym/./waf", line 165, in <module>
+    Scripting.waf_entry_point(cwd, VERSION, wafdir)
+  File "/PRISMA/ns3-gym/.waf3-2.0.9-897e824215d3dab2b64982d8af27db90/waflib/Scripting.py", line 50, in waf_entry_point
+    env.load(os.path.join(cur,Options.lockfile))
+  File "/PRISMA/ns3-gym/.waf3-2.0.9-897e824215d3dab2b64982d8af27db90/waflib/ConfigSet.py", line 149, in load
+    code=Utils.readf(filename,m='rU')
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/PRISMA/ns3-gym/.waf3-2.0.9-897e824215d3dab2b64982d8af27db90/waflib/Utils.py", line 141, in readf
+    with open(fname,m)as f:
+         ^^^^^^^^^^^^^
+ValueError: invalid mode: 'rUb'
+    
+Replace 'rU' with 'r' (simply remove the U).
+    
+https://askubuntu.com/questions/1400476/docker-error-response-from-daemon-could-not-select-device-driver-with-capab
