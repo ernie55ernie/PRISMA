@@ -5,7 +5,7 @@
 #For running different agents, add the following arg:
 # --agent_type=sp \   #e.g., for Shortest Path agent
 
-cd ..
+#cd ..
 
 python3 main.py \
 	--seed=100 \
@@ -18,8 +18,8 @@ python3 main.py \
 	--logs_parent_folder=examples/abilene/ \
 	--traffic_matrix_root_path=examples/abilene/traffic_matrices/ \
 	--traffic_matrix_index=0 \
-	--adjacency_matrix_path=examples/abilene/adjacency_matrix.txt \
-	--node_coordinates_path=examples/abilene/node_coordinates.txt \
+#	--adjacency_matrix_path=examples/abilene/adjacency_matrix.txt \
+#	--node_coordinates_path=examples/abilene/node_coordinates.txt \
 	--training_step=0.01 \
 	--batch_size=512 \
 	--lr=0.001 \
@@ -27,15 +27,15 @@ python3 main.py \
 	--exploration_initial_eps=1.0 \
 	--iterationNum=3000 \
 	--gamma=1.0 \
-	--training_trigger_type="time" \
+#	--training_trigger_type="time" \
 	--save_models=1 \
 	--start_tensorboard=0 \
 	--replay_buffer_max_size=50000 \
-   	--link_delay="0ms" \
+   	--link_delay="0" \
 	--load_factor=0.4 \
 	--sync_step=0.5 \
 	--load_path=examples/abilene/DQN_buffer_sp_init \
 
 sleep 5
 
-rm -r ../ns3-gym/scratch/prisma
+#rm -r ../ns3-gym/scratch/prisma

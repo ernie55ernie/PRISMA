@@ -21,5 +21,5 @@ python3 main.py \
    --training_step=0.01 \
    --lr=0.001 \
    --replay_buffer_max_size=50000 \
-   --link_delay="0ms" \
+   --link_delay="0" \
    --tensorboard_port=65534 \
