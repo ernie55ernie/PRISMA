@@ -1,9 +1,28 @@
 array=(
+0.2
+0.4
 0.6
-#0.8
-#1.0
-#1.2
-#1.4
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+2.0
+2.2
+2.4
+2.6
+3.0
+3.2
+3.4
+3.6
+3.8
+4.0
+4.2
+4.4
+4.6
+4.8
+5.0
 )
 counter=0
 
@@ -21,7 +40,7 @@ for j in ${array[@]}
 		--train=0 \
 		--seed=100 \
 		--agent_type="sp" \
-		--session_name="test_sp_09_08_v5_load_$res1" \
+		--session_name="test_sp_v0_load_$res1" \
 		--signaling_type="ideal" \
 		--signalingSim=1 \
 		--training_step=0.01 \
@@ -31,17 +50,19 @@ for j in ${array[@]}
 		--exploration_final_eps=0.01 \
 		--exploration_initial_eps=1.0 \
 		--iterationNum=3000 \
-		--training_trigger_type="time" \
 		--save_models=0 \
 		--start_tensorboard=0 \
 		--replay_buffer_max_size=15000 \
-   		--link_delay="1ms" \
+   		--link_delay="1" \
 		--load_factor=$j \
 		--logs_parent_folder=examples/abilene/ \
-		--traffic_matrix_index=5 \
+		--traffic_matrix_index=0 \
 		--logging_timestep=1 \
-		--adjacency_matrix_path=examples/abilene/adjacency_matrix.txt \
-		--node_coordinates_path=examples/abilene/node_coordinates.txt \
 		--max_out_buffer_size=16260 \
 		#--load_path=examples/abilene/dqn_buffer_sp_init
+# 		--training_trigger_type="time" \
+# 		--adjacency_matrix_path=examples/abilene/adjacency_matrix.txt \
+# 		--node_coordinates_path=examples/abilene/node_coordinates.txt \
+# 		--traffic_matrix_index=5 \
+
 done

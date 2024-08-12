@@ -13,13 +13,11 @@ python3 main.py \
 	--basePort=6555 \
 	--train=1 \
 	--agent_type="dqn_buffer" \
-	--session_name="train_abilene_ideal_ts_0_03_batch_512_lr_1e-3_gamma_1_final_eps_0_01_load_40_sync_05_loss_x1_sp_init"\
+	--session_name="train_abilene_ideal_ts_0_01_batch_512_lr_1e-3_gamma_1_final_eps_0_01_load_50_sync_05_loss_x1_sp_init"\
 	--signaling_type="ideal" \
 	--logs_parent_folder=examples/abilene/ \
 	--traffic_matrix_root_path=examples/abilene/traffic_matrices/ \
 	--traffic_matrix_index=0 \
-#	--adjacency_matrix_path=examples/abilene/adjacency_matrix.txt \
-#	--node_coordinates_path=examples/abilene/node_coordinates.txt \
 	--training_step=0.01 \
 	--batch_size=512 \
 	--lr=0.001 \
@@ -27,14 +25,16 @@ python3 main.py \
 	--exploration_initial_eps=1.0 \
 	--iterationNum=3000 \
 	--gamma=1.0 \
-#	--training_trigger_type="time" \
 	--save_models=1 \
 	--start_tensorboard=0 \
-	--replay_buffer_max_size=50000 \
+	--replay_buffer_max_size=15000 \
    	--link_delay="0" \
-	--load_factor=0.4 \
+	--load_factor=5.0 \
 	--sync_step=0.5 \
-	--load_path=examples/abilene/DQN_buffer_sp_init \
+# 	--load_path=examples/abilene/DQN_buffer_sp_init \
+#	--adjacency_matrix_path=examples/abilene/adjacency_matrix.txt \
+#	--node_coordinates_path=examples/abilene/node_coordinates.txt \
+#	--training_trigger_type="time" \
 
 sleep 5
 
