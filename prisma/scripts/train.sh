@@ -9,12 +9,12 @@
 
 python3 main.py \
 	--seed=100 \
-	--numEpisodes=20 \
+	--numEpisodes=5 \
 	--simTime=60 \
 	--basePort=6555 \
 	--train=1 \
 	--agent_type="dqn_buffer" \
-	--session_name="train_abilene_ideal_ts_0_01_batch_512_lr_1e-3_gamma_1_final_eps_0_01_load_24_sync_05_loss_x1"\
+	--session_name="train_abilene_ideal_ne_5_ts_0_01_batch_512_lr_1e-3_gamma_1_final_eps_0_01_load_50_sync_05_loss_x1"\
 	--signaling_type="ideal" \
 	--logs_parent_folder=examples/abilene/ \
 	--traffic_matrix_root_path=examples/abilene/traffic_matrices/ \
@@ -30,7 +30,7 @@ python3 main.py \
 	--start_tensorboard=0 \
 	--replay_buffer_max_size=15000 \
    	--link_delay="1" \
-	--load_factor=2.4 \
+	--load_factor=5.0 \
 	--sync_step=0.5 \
 # 	--load_path=examples/abilene/DQN_buffer_sp_init \
 #	--adjacency_matrix_path=examples/abilene/adjacency_matrix.txt \

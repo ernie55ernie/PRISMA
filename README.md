@@ -167,8 +167,25 @@ In the figure below, we can evaluate the model performance. We can observe that 
 
 ![My Image](images/testing_curves.png)
 
+Scripts
+==========
+```bash
+sudo docker run --rm --gpus all -v $(pwd)/prisma:/app/prisma -w /app/prisma allicheredha/prisma_env /bin/bash -c "./scripts/train.sh"
+```
 
-# Issues
+```bash
+sudo docker run --rm --gpus '"device=1"' -v $(pwd)/prisma:/app/prisma -w /app/prisma allicheredha/prisma_env /bin/bash -c "./scripts/train.sh"
+```
+
+
+```bash
+sudo docker run --rm --gpus all -v $(pwd)/prisma:/app/prisma -w /app/prisma allicheredha/prisma_env /bin/bash -c "./scripts/test.sh"
+tensorboard --logdir='./test_sp_09_08_v5_load_1400' --bind_all
+```
+
+
+Issues
+==========
 
 Waf: The wscript in '/PRISMA/ns3-gym' is unreadable
 Traceback (most recent call last):
