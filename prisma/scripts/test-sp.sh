@@ -1,18 +1,19 @@
 array=(
-0.2
-0.4
-0.6
-0.8
-1.0
-1.2
-1.4
-1.6
-1.8
-2.0
-2.2
-2.4
-2.6
-3.0
+# 0.2
+# 0.4
+# 0.6
+# 0.8
+# 1.0
+# 1.2
+# 1.4
+# 1.6
+# 1.8
+# 2.0
+# 2.2
+# 2.4
+# 2.6
+# 2.8
+# 3.0
 3.2
 3.4
 3.6
@@ -35,21 +36,14 @@ for j in ${array[@]}
 	res1=${FLOAT/.*}
 	echo $res1
 	python3 main.py \
-		--simTime=15 \
+		--simTime=60 \
 		--basePort=6000 \
 		--train=0 \
 		--seed=100 \
 		--agent_type="sp" \
-		--session_name="test_sp_v0_load_$res1" \
+		--session_name="test_sp_ideal_v0_load_$res1" \
 		--signaling_type="ideal" \
 		--signalingSim=1 \
-		--training_step=0.01 \
-		--batch_size=256 \
-		--lr=0.001 \
-		--gamma=1.0 \
-		--exploration_final_eps=0.01 \
-		--exploration_initial_eps=1.0 \
-		--iterationNum=3000 \
 		--save_models=0 \
 		--start_tensorboard=0 \
 		--replay_buffer_max_size=15000 \
